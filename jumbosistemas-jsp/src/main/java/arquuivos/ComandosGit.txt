@@ -1,0 +1,20 @@
+
+
+
+Commit - Envia as Alteracoes para o Repository Local
+Commit e Push - Envia as alteracoes para o Repository local e também para o renmoito.
+Revert - Volta o seu codigo local para a verão atuall do repository remoto.
+Clonar - Copia todo o projeto do Repository remoto para o seu computador local.
+Git Ignore - Ignora arquivos que nao podem ser enviados para os repository remoto.
+Pull - Atualiza seu projeto local com as mudancas encontradas no reposirory remoto.
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+
+
+Senha guit
+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
