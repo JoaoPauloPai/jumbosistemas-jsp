@@ -14,8 +14,6 @@
 			<version>9.4.1212</version>
 		</dependency>
 
-
-
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
@@ -29,14 +27,6 @@
 			<version>2.0.0</version>
 		</dependency>
 		
-<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-compress -->
-<dependency>
-    <groupId>org.apache.commons</groupId>
-    <artifactId>commons-compress</artifactId>
-    <version>1.21</version>
-</dependency>
-
-		 
 	</dependencies>
   <build>
     <plugins>
