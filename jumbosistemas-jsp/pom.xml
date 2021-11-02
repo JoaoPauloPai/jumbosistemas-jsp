@@ -14,23 +14,14 @@
 			<version>9.4.1212</version>
 		</dependency>
 
+
+
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.9.8</version>
 		</dependency>
-		
-		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>2.1</version>
-		</dependency>
 
-		<dependency>
-			<groupId>javax.servlet.jsp.jstl</groupId>
-			<artifactId>jstl-api</artifactId>
-			<version>1.2</version>
-		</dependency>
 
 		<dependency>
 			<groupId>org.glassfish.web</groupId>
@@ -38,7 +29,14 @@
 			<version>2.0.0</version>
 		</dependency>
 		
-     
+<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-compress -->
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-compress</artifactId>
+    <version>1.21</version>
+</dependency>
+
+		 
 	</dependencies>
   <build>
     <plugins>

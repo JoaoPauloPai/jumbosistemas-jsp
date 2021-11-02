@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
+
 <nav class="navbar header-navbar pcoded-header">
 	<div class="navbar-wrapper">
 		<div class="navbar-logo">
@@ -19,7 +20,7 @@
 					</div>
 				</div>
 			</div>
-			<a href="index.html"> <img class="img-fluid"
+			<a href="index.html"> <img width="40px" class="img-fluid"
 				src="<%=request.getContextPath()%>/assets/images/logo.png"
 				alt="Theme-Logo" />
 			</a> <a class="mobile-options waves-effect waves-light"> <i
@@ -55,7 +56,7 @@
 				</a>
 					<ul class="show-notification">
 						<li>
-							<h6>Notifications</h6> <label class="label label-danger">New</label>
+							<h6>Novidades</h6> <label class="label label-danger">Novo</label>
 						</li>
 						<li class="waves-effect waves-light">
 							<div class="media">
@@ -98,33 +99,42 @@
 						</li>
 					</ul></li>
 				<li class="user-profile header-notification"><a href="#!"
-					class="waves-effect waves-light"> <img
-						src="<%=request.getContextPath()%>/assets/images/avatar-4.jpg"
-						class="img-radius" alt="User-Profile-Image"> <span><%=request.getSession().getAttribute("usuario")%></span>
+					class="waves-effect waves-light"> <span><%=request.getSession().getAttribute("usuario")%></span>
 						<i class="ti-angle-down"></i>
 				</a>
 					<ul class="show-notification profile-notification">
-						<li class="waves-effect waves-light"><a href="#!"> <i
-								class="ti-settings"></i> Settings
-						</a></li>
-						<li class="waves-effect waves-light"><a
-							href="user-profile.html"> <i class="ti-user"></i> Profile
-						</a></li>
-						<li class="waves-effect waves-light"><a
-							href="email-inbox.html"> <i class="ti-email"></i> My Messages
-						</a></li>
-						<li class="waves-effect waves-light"><a
-							href="auth-lock-screen.html"> <i class="ti-lock"></i> Lock
-								Screen
-						</a></li>
+
+						<!-- 
+                                  <li class="waves-effect waves-light">
+                                      <a href="#!">
+                                          <i class="ti-settings"></i> Settings
+                                      </a>
+                                  </li>
+                                  
+                                  <li class="waves-effect waves-light">
+                                      <a href="user-profile.html">
+                                          <i class="ti-user"></i> Profile
+                                      </a>
+                                  </li>
+                                  
+                                  <li class="waves-effect waves-light">
+                                      <a href="email-inbox.html">
+                                          <i class="ti-email"></i> My Messages
+                                      </a>
+                                  </li>
+                                  
+                                  <li class="waves-effect waves-light">
+                                      <a href="auth-lock-screen.html">
+                                          <i class="ti-lock"></i> Lock Screen
+                                      </a>
+                                  </li>
+                                  -->
 						<li class="waves-effect waves-light"><a
 							href="<%=request.getContextPath()%>/ServletLogin?acao=logout">
-								<i class="ti-layout-sidebar-left"></i> Logout
+								<i class="ti-layout-sidebar-left"></i> Sair
 						</a></li>
 					</ul></li>
 			</ul>
 		</div>
 	</div>
 </nav>
-</body>
-</html>
