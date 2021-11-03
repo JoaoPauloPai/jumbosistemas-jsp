@@ -126,7 +126,6 @@
 
 	<jsp:include page="javascripfile.jsp"></jsp:include>
 
-
 	<script type="text/javascript">
 		$("#numero").keypress(function(event) {
 			return /\d/.test(String.fromCharCode(event.keyCode));

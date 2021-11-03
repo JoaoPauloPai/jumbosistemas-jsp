@@ -5,8 +5,7 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-
-
+import com.fasterxml.jackson.core.Base64Variant;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import dao.DAOUsuarioRepository;
@@ -16,7 +15,6 @@ import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.Part;
 import model.ModelLogin;
 
 @MultipartConfig
@@ -127,6 +125,7 @@ public class ServletUsuarioController extends ServletGenericUtil {
 
 					response.setHeader("Content-Disposition",
 							"attachment;filename=arquivo." + modelLogin.getExtensaofotouser());
+					
 				//	response.getOutputStream()
 						//	.write(new Base64().decodeBase64(modelLogin.getFotouser().split("\\,")[1]));
 

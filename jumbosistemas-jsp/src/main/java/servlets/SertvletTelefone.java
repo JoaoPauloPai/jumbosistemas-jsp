@@ -68,6 +68,7 @@ public class SertvletTelefone  extends ServletGenericUtil {
 	
 		
 		}else {
+			
 			 List<ModelLogin> modelLogins = daoUsuarioRepository.consultaUsuarioList(super.getUserLogado(request));
 		     request.setAttribute("modelLogins", modelLogins);
 		     request.setAttribute("totalPagina", daoUsuarioRepository.totalPagina(this.getUserLogado(request)));
@@ -97,11 +98,15 @@ public class SertvletTelefone  extends ServletGenericUtil {
 			
 			daoTelefoneRepository.gravaTelefone(modelTelefone);
 			
+			
+			
+		
+			
 			List<ModelTelefone> modelTelefones = daoTelefoneRepository.listFone(Long.parseLong(usuario_pai_id));
+		
 			
-			ModelLogin modelLogin = daoUsuarioRepository.consultaUsuarioID(Long.parseLong(usuario_pai_id));
-			
-			request.setAttribute("modelLogin", modelLogin);
+			ModelLogin modelLogin = daoUsuarioRepository.consultaUsuarioID(Long.parseLong(usuario_pai_id)); 
+		    request.setAttribute("modelLogin", modelLogin);
 			request.setAttribute("modelTelefones", modelTelefones);
 			request.setAttribute("msg", "Salvo com sucesso");
 			request.getRequestDispatcher("principal/telefone.jsp").forward(request, response);

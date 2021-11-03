@@ -1,0 +1,7 @@
+Erro para salvar imagem - 
+os imports tomcat base-64 
+
+erro deletar telefone, não está retornando para a tela
+Erro deletar, resolvido.
+
+Mensagem de comprar ainda em ação
