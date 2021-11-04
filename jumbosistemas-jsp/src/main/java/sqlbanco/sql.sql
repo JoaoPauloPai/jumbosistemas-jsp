@@ -1,4 +1,9 @@
--- DROP TABLE public.model_login;
+
+ALTER TABLE model_login ADD COLUMN rendamensal double precision;
+
+ALTER TABLE model_login ADD COLUMN rendamensal numeric(6,3);
+
+alter table model_login add column datanascimento date;
 
 CREATE TABLE public.model_login
 (

@@ -5,7 +5,8 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-import com.fasterxml.jackson.core.Base64Variant;
+//import org.apache.tomcat.util.codec.binary.Base64;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import dao.DAOUsuarioRepository;
@@ -127,7 +128,7 @@ public class ServletUsuarioController extends ServletGenericUtil {
 							"attachment;filename=arquivo." + modelLogin.getExtensaofotouser());
 					
 				//	response.getOutputStream()
-						//	.write(new Base64().decodeBase64(modelLogin.getFotouser().split("\\,")[1]));
+				//			.write(new Base64().decodeBase64(modelLogin.getFotouser().split("\\,")[1]));
 
 				}
 
@@ -179,6 +180,10 @@ public class ServletUsuarioController extends ServletGenericUtil {
 			String uf = request.getParameter("uf");
 			String numero = request.getParameter("numero");
 			String dataNascimento = request.getParameter("dataNascimento");
+			String rendaMensal = request.getParameter("rendaMensal");
+			
+			rendaMensal = rendaMensal.split("\\ ")[1].replaceAll("\\.", "").replaceAll("\\,", ".");
+		
 
 			ModelLogin modelLogin = new ModelLogin();
 
@@ -195,7 +200,8 @@ public class ServletUsuarioController extends ServletGenericUtil {
 			modelLogin.setLocalidade(localidade);
 			modelLogin.setUf(uf);
 			modelLogin.setNumero(numero);
-			modelLogin.setDataNascimento(new Date(new SimpleDateFormat("dd/mm/yyyy").parse(dataNascimento).getTime()));
+			modelLogin.setDataNascimento(Date.valueOf(new SimpleDateFormat("yyyy-mm-dd").format(new SimpleDateFormat("dd/mm/yyyy").parse(dataNascimento))));
+			modelLogin.setRendaMensal(Double.valueOf(rendaMensal));
 
 			/*  if (ServletFileUpload.isMultipartContent(request)) {
 

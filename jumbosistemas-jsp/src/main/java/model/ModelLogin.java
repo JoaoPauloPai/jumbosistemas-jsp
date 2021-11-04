@@ -36,6 +36,20 @@ private String uf;
 
 private String numero;
 
+private double rendaMensal;
+
+
+
+
+
+public double getRendaMensal() {
+	return rendaMensal;
+}
+
+public void setRendaMensal(double rendaMensal) {
+	this.rendaMensal = rendaMensal;
+}
+
 public void setDataNascimento(Date dataNascimento) {
 	this.dataNascimento = dataNascimento;
 }

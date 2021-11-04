@@ -5,3 +5,4 @@ erro deletar telefone, não está retornando para a tela
 Erro deletar, resolvido.
 
 Mensagem de comprar ainda em ação
+Resolvido Botão comprar

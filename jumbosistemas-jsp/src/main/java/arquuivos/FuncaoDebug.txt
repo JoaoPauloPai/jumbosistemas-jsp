@@ -1,0 +1,7 @@
+Atalhos para Debugar códigos
+
+F6 - segue linha a linha
+F7 - entra nos métodos
+F8 - sai de dentro do método atual
+
+CTRL + SHIFT + I - valor da expressão ou variável
