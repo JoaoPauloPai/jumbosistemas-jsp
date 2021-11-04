@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <nav class="navbar header-navbar pcoded-header">
 	<div class="navbar-wrapper">
@@ -60,9 +61,13 @@
 						</li>
 						<li class="waves-effect waves-light">
 							<div class="media">
+                           
+
 								<img class="d-flex align-self-center img-radius"
 									src="<%=request.getContextPath()%>/assets/images/avatar-2.jpg"
 									alt="Generic placeholder image">
+                                 
+                                   
 								<div class="media-body">
 									<h5 class="notification-user"><%=request.getSession().getAttribute("usuario")%></h5>
 									<p class="notification-msg">Lorem ipsum dolor sit amet,

@@ -5,7 +5,9 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-//import org.apache.tomcat.util.codec.binary.Base64;
+import org.apache.tomcat.jakartaee.commons.compress.utils.IOUtils;
+import org.apache.tomcat.util.codec.binary.Base64;
+import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -16,6 +18,7 @@ import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
 import model.ModelLogin;
 
 @MultipartConfig
@@ -126,9 +129,9 @@ public class ServletUsuarioController extends ServletGenericUtil {
 
 					response.setHeader("Content-Disposition",
 							"attachment;filename=arquivo." + modelLogin.getExtensaofotouser());
-					
-				//	response.getOutputStream()
-				//			.write(new Base64().decodeBase64(modelLogin.getFotouser().split("\\,")[1]));
+
+					response.getOutputStream()
+							.write(new Base64().decodeBase64(modelLogin.getFotouser().split("\\,")[1]));
 
 				}
 
@@ -142,6 +145,31 @@ public class ServletUsuarioController extends ServletGenericUtil {
 				request.setAttribute("totalPagina", daoUsuarioRepository.totalPagina(this.getUserLogado(request)));
 				request.getRequestDispatcher("principal/usuario.jsp").forward(request, response);
 			}
+			 else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("imprimirRelatorioUser")) {
+				 
+				 String dataInicial = request.getParameter("dataInicial");
+				 String dataFinal = request.getParameter("dataFinal");
+				 
+				
+				 if (dataInicial == null || dataInicial.isEmpty() && dataFinal == null || dataFinal.isEmpty()) {
+					 
+					 request.setAttribute("listaUser", daoUsuarioRepository.consultaUsuarioListRel(super.getUserLogado(request)));
+					
+	
+				 }else {
+					
+					 request.setAttribute("listaUser", daoUsuarioRepository
+						 .consultaUsuarioListRel(super.getUserLogado(request)));
+					
+					 
+				 }
+				 
+				 
+				 request.setAttribute("dataInicial", dataInicial);
+				 request.setAttribute("dataFinal", dataFinal);
+				 request.getRequestDispatcher("principal/reluser.jsp").forward(request, response);
+				 
+			 }
 
 			else {
 				List<ModelLogin> modelLogins = daoUsuarioRepository.consultaUsuarioList(super.getUserLogado(request));
@@ -181,9 +209,8 @@ public class ServletUsuarioController extends ServletGenericUtil {
 			String numero = request.getParameter("numero");
 			String dataNascimento = request.getParameter("dataNascimento");
 			String rendaMensal = request.getParameter("rendaMensal");
-			
+
 			rendaMensal = rendaMensal.split("\\ ")[1].replaceAll("\\.", "").replaceAll("\\,", ".");
-		
 
 			ModelLogin modelLogin = new ModelLogin();
 
@@ -200,24 +227,25 @@ public class ServletUsuarioController extends ServletGenericUtil {
 			modelLogin.setLocalidade(localidade);
 			modelLogin.setUf(uf);
 			modelLogin.setNumero(numero);
-			modelLogin.setDataNascimento(Date.valueOf(new SimpleDateFormat("yyyy-mm-dd").format(new SimpleDateFormat("dd/mm/yyyy").parse(dataNascimento))));
+			modelLogin.setDataNascimento(Date.valueOf(new SimpleDateFormat("yyyy-mm-dd")
+					.format(new SimpleDateFormat("dd/mm/yyyy").parse(dataNascimento))));
 			modelLogin.setRendaMensal(Double.valueOf(rendaMensal));
 
-			/*  if (ServletFileUpload.isMultipartContent(request)) {
+			if (ServletFileUpload.isMultipartContent(request)) {
 
 				Part part = request.getPart("fileFoto"); /* Pega foto da tela */
 
-			/*	if (part.getSize() > 0) {
+				if (part.getSize() > 0) {
 
 					byte[] foto = IOUtils.toByteArray(part.getInputStream()); /* Converte imagem para byte */
-			/*		String imagemBase64 = "data:image/" + part.getContentType().split("\\/")[1] + ";base64,"
+					String imagemBase64 = "data:image/" + part.getContentType().split("\\/")[1] + ";base64,"
 							+ new Base64().encodeBase64String(foto);
 
 					modelLogin.setFotouser(imagemBase64);
 					modelLogin.setExtensaofotouser(part.getContentType().split("\\/")[1]);
 				}
 
-			}   */
+			}
 
 			if (daoUsuarioRepository.validarLogin(modelLogin.getLogin()) && modelLogin.getId() == null) {
 				msg = "Já existe usuário com o mesmo login, informe outro login;";

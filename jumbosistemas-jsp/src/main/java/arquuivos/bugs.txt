@@ -1,5 +1,10 @@
 Erro para salvar imagem - 
 os imports tomcat base-64 
+Resovido os Imports 
+
+/*Se teu projeto for do tipo “Dynamic Web Project”, e deve ser…
+Clique com o botão invertido em cima do nome do projeto e vá em:
+Propriedades -> Targeted Runtime*/
 
 erro deletar telefone, não está retornando para a tela
 Erro deletar, resolvido.

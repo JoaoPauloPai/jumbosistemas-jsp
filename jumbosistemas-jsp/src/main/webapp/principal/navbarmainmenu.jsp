@@ -81,7 +81,21 @@
 						</a></li>
 					</c:if>
 
-					<!--  
+
+					<ul class="pcoded-submenu1">
+						<c:if test="${perfil == 'ADMIN'}">
+							<li class=" "><a
+								href="<%=request.getContextPath()%>/principal/produto.jsp"
+								class="waves-effect waves-dark"> <span class="pcoded-micon"><i
+										class="ti-angle-right"></i></span> <span class="pcoded-mtext"
+									data-i18n="nav.basic-components.alert">Produto</span> <span
+									class="pcoded-mcaret"></span>
+							</a></li>
+						</c:if>
+
+
+
+						<!--  
                                       <li class=" ">
                                           <a href="breadcrumb.html" class="waves-effect waves-dark">
                                               <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
@@ -148,11 +162,12 @@
                                       
                                        -->
 
-				</ul></li>
+					</ul></li>
 		</ul>
 		<div class="pcoded-navigation-label" data-i18n="nav.category.forms">Relatório</div>
 		<ul class="pcoded-item pcoded-left-item">
-			<li><a href="form-elements-component.html"
+			<li><a
+				href="<%=request.getContextPath()%>/principal/reluser.jsp"
 				class="waves-effect waves-dark"> <span class="pcoded-micon"><i
 						class="ti-layers"></i><b>FC</b></span> <span class="pcoded-mtext"
 					data-i18n="nav.form-components.main">Usuário</span> <span
