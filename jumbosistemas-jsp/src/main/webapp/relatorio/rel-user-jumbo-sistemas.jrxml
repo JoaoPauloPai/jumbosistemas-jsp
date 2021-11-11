@@ -2,59 +2,142 @@
 <!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rel-user-jumbo-sistemas" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9a9ffc0c-b797-4504-b3a2-2642e492acc4">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="PARAM_SUB_REPORT" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
+	<field name="numero" class="java.lang.String">
+		<fieldDescription><![CDATA[numero]]></fieldDescription>
+	</field>
+	<field name="bairro" class="java.lang.String">
+		<fieldDescription><![CDATA[bairro]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[nome]]></fieldDescription>
+	</field>
+	<field name="localidade" class="java.lang.String">
+		<fieldDescription><![CDATA[localidade]]></fieldDescription>
+	</field>
+	<field name="novo" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[novo]]></fieldDescription>
+	</field>
+	<field name="login" class="java.lang.String">
+		<fieldDescription><![CDATA[login]]></fieldDescription>
+	</field>
+	<field name="telefones" class="java.util.List">
+		<fieldDescription><![CDATA[telefones]]></fieldDescription>
+	</field>
+	<field name="cep" class="java.lang.String">
+		<fieldDescription><![CDATA[cep]]></fieldDescription>
+	</field>
+	<field name="perfil" class="java.lang.String">
+		<fieldDescription><![CDATA[perfil]]></fieldDescription>
+	</field>
+	<field name="senha" class="java.lang.String">
+		<fieldDescription><![CDATA[senha]]></fieldDescription>
+	</field>
+	<field name="uf" class="java.lang.String">
+		<fieldDescription><![CDATA[uf]]></fieldDescription>
+	</field>
+	<field name="rendaMensal" class="java.lang.Double">
+		<fieldDescription><![CDATA[rendaMensal]]></fieldDescription>
+	</field>
+	<field name="useradmin" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[useradmin]]></fieldDescription>
+	</field>
+	<field name="logradouro" class="java.lang.String">
+		<fieldDescription><![CDATA[logradouro]]></fieldDescription>
+	</field>
+	<field name="mostraTelefoneRel" class="java.lang.String">
+		<fieldDescription><![CDATA[mostraTelefoneRel]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="dataNascimento" class="java.sql.Date">
+		<fieldDescription><![CDATA[dataNascimento]]></fieldDescription>
+	</field>
+	<field name="sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[sexo]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[email]]></fieldDescription>
+	</field>
+	<field name="extensaofotouser" class="java.lang.String">
+		<fieldDescription><![CDATA[extensaofotouser]]></fieldDescription>
+	</field>
+	<field name="fotouser" class="java.lang.String">
+		<fieldDescription><![CDATA[fotouser]]></fieldDescription>
+	</field>
+	<group name="grupo_user">
+		<groupExpression><![CDATA[$F{nome}]]></groupExpression>
+		<groupHeader>
+			<band height="51">
+				<textField>
+					<reportElement x="0" y="0" width="280" height="20" uuid="e708db99-45cb-47a4-8244-539fb5b750cb"/>
+					<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="10" y="20" width="539" height="1" uuid="85ef754a-5e13-4869-be7f-07234cf82096"/>
+				</line>
+			</band>
+		</groupHeader>
+	</group>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
 		<band height="79" splitType="Stretch">
 			<staticText>
-				<reportElement x="10" y="10" width="550" height="67" uuid="a5cb7958-ebf0-4c35-b321-813dbaead901"/>
+				<reportElement x="0" y="10" width="545" height="50" uuid="cbcc362a-84cf-4f4f-98ea-245e3595e560"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="26"/>
+					<font size="26"/>
 				</textElement>
-				<text><![CDATA[RELATÓRIO USUÁRIOS]]></text>
+				<text><![CDATA[Relatório De Usuários]]></text>
 			</staticText>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
-	</pageHeader>
-	<columnHeader>
-		<band height="61" splitType="Stretch"/>
-	</columnHeader>
-	<detail>
-		<band height="125" splitType="Stretch"/>
-	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band height="54" splitType="Stretch"/>
-	</pageFooter>
-	<summary>
-		<band height="209" splitType="Stretch">
+		<band height="22" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="146" width="545" height="34" uuid="1d16e1d8-9fb8-4ed1-aa04-cafcad3f69d3"/>
+				<reportElement x="0" y="0" width="100" height="20" uuid="9dd9d125-74ff-476e-929d-d1fba8d0b8e8"/>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="214" splitType="Stretch"/>
+	</detail>
+	<lastPageFooter>
+		<band height="61">
+			<staticText>
+				<reportElement x="-3" y="21" width="560" height="18" uuid="04fd588c-8655-417b-bdc2-3b4193531f44"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial Black" size="11"/>
+					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[Jumbo Sistemas ]]></text>
+				<text><![CDATA[Jumbo Sistemas]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="170" width="545" height="20" uuid="f5d178c7-acfa-4467-a3ba-75cd0d4e41ac"/>
-				<textElement textAlignment="Center" verticalAlignment="Bottom">
-					<font fontName="Arial"/>
+				<reportElement x="-3" y="30" width="546" height="20" uuid="9a8c53ce-f6fc-4bbe-adc5-9c59bcf09233"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[www.jumbosistemas.com.br]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-3" y="42" width="560" height="19" uuid="bd81cff0-acd6-42d9-b925-bb1fd7a701bf">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
 				</textElement>
 				<text><![CDATA[fone (65) 9 9920-7437]]></text>
 			</staticText>
-			<staticText>
-				<reportElement x="10" y="190" width="550" height="19" uuid="6e8e2f01-6ce7-4882-bca3-d1039d724bf4"/>
-				<textElement textAlignment="Center" verticalAlignment="Bottom"/>
-				<text><![CDATA[email - joaopaulopai99@gmail.com]]></text>
-			</staticText>
+			<subreport>
+				<reportElement x="0" y="-214" width="549" height="14" uuid="1a95a3ba-eb42-40df-8afb-dfd2639e20f1"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource{$F{telefones}}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{PARAM_SUB_REPORT}+"sub_reprot_user.jasper"]]></subreportExpression>
+			</subreport>
 		</band>
-	</summary>
+	</lastPageFooter>
 </jasperReport>
