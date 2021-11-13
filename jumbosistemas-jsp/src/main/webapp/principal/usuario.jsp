@@ -41,6 +41,7 @@
 									<div class="page-body">
 
 										<div class="row">
+										
 											<div class="col-sm-12">
 												<!-- Basic Form Inputs card start -->
 												<div class="card">
@@ -264,6 +265,7 @@ if (modelLogin != null && modelLogin.getSexo().equals("FEMININO")) {
 													</div>
 												</div>
 											</div>
+											
 										</div>
 										<span id="msg">${msg}</span>
 
