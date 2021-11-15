@@ -93,9 +93,29 @@
 							</a></li>
 						</c:if>
 
-
-
-						<!--  
+						<ul class="pcoded-submenu1">
+							<c:if test="${perfil == 'ADMIN'}">
+								<li class=" "><a
+									href="<%=request.getContextPath()%>/principal/produto.jsp"
+									class="waves-effect waves-dark"> <span class="pcoded-micon"><i
+											class="ti-angle-right"></i></span> <span class="pcoded-mtext"
+										data-i18n="nav.basic-components.alert">Marca</span> <span
+										class="pcoded-mcaret"></span>
+								</a></li>
+							</c:if>
+                             
+                             <ul class="pcoded-submenu1">
+						<c:if test="${perfil == 'ADMIN'}">
+							<li class=" "><a
+								href="<%=request.getContextPath()%>/principal/produto.jsp"
+								class="waves-effect waves-dark"> <span class="pcoded-micon"><i
+										class="ti-angle-right"></i></span> <span class="pcoded-mtext"
+									data-i18n="nav.basic-components.alert">Pessoa</span> <span
+									class="pcoded-mcaret"></span>
+							</a></li>
+						</c:if>
+                             
+							<!--  
                                       <li class=" ">
                                           <a href="breadcrumb.html" class="waves-effect waves-dark">
                                               <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
@@ -162,7 +182,7 @@
                                       
                                        -->
 
-					</ul></li>
+						</ul></li>
 		</ul>
 		<div class="pcoded-navigation-label" data-i18n="nav.category.forms">Relatório</div>
 		<ul class="pcoded-item pcoded-left-item">
