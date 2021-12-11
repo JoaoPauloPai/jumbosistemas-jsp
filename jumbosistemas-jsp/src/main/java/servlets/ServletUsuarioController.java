@@ -13,6 +13,7 @@ import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import bean.BeanGraficoSalarioUser;
 import dao.DAOUsuarioRepository;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -212,26 +213,28 @@ public class ServletUsuarioController extends ServletGenericUtil {
 					 && dataFinal == null || dataFinal.isEmpty()) {
 				 
 				 
-		//		 BeanDtoGraficoSalarioUser beanDtoGraficoSalarioUser =   daoUsuarioRepository.
-			//			 montarGraficoMediaSalario(super.getUserLogado(request));
+			 BeanGraficoSalarioUser beanGraficoSalarioUser =   daoUsuarioRepository.
+					 montarGraficoMediaSalario(super.getUserLogado(request));
 				 
 				   ObjectMapper mapper = new ObjectMapper();
 				 
-			//	   String json = mapper.writeValueAsString(beanDtoGraficoSalarioUser);
+			   String json = mapper.writeValueAsString(beanGraficoSalarioUser);
 				 
-			//	   response.getWriter().write(json);
+				   response.getWriter().write(json);
 				 
 				 
 			 }else {
 				 
-		//		 BeanDtoGraficoSalarioUser beanDtoGraficoSalarioUser =   daoUsuarioRepository.
-						// montarGraficoMediaSalario(super.getUserLogado(request), dataInicial, dataFinal);
+			 BeanGraficoSalarioUser beanGraficoSalarioUser =   daoUsuarioRepository.
+					 montarGraficoMediaSalario(super.getUserLogado(request));
+					// montarGraficoMediaSalario(super.getUserLogado(request),dataInicial, dataFinal);
+				
 				 
-				//   ObjectMapper mapper = new ObjectMapper();
+				   ObjectMapper mapper = new ObjectMapper();
 				 
-				//   String json = mapper.writeValueAsString(beanDtoGraficoSalarioUser);
+				   String json = mapper.writeValueAsString(beanGraficoSalarioUser);
 				 
-				//   response.getWriter().write(json);
+				   response.getWriter().write(json);
 				 
 		
 			 }

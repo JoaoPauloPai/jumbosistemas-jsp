@@ -96,13 +96,21 @@
 
 					<ul class="pcoded-submenu">
 						<c:if test="${perfil == 'ADMIN'}">
-							<li class=" "><a
-								href="<%=request.getContextPath()%>/principal/reluser.jsp"
-								class="waves-effect waves-dark"> <span class="pcoded-micon"><i
-										class="ti-angle-right"></i></span> <span class="pcoded-mtext"
-									data-i18n="nav.basic-components.alert">Usuário</span> <span
-									class="pcoded-mcaret"></span>
-							</a></li>
+							<li class=" ">
+							<a href="<%=request.getContextPath()%>/principal/reluser.jsp"class="waves-effect waves-dark"> 
+								<span class="pcoded-micon"><iclass="ti-angle-right"></i></span> 
+								<span class="pcoded-mtext"data-i18n="nav.basic-components.alert">Usuário</span>
+								 <span class="pcoded-mcaret"></span>
+							</a>
+							</li>
+								<li class=" ">
+							<a href="<%=request.getContextPath()%>/principal/relusergrafico.jsp"class="waves-effect waves-dark"> 
+								<span class="pcoded-micon"><iclass="ti-angle-right"></i></span> 
+								<span class="pcoded-mtext"data-i18n="nav.basic-components.alert">Gráfico Salário</span>
+								 <span class="pcoded-mcaret"></span>
+							</a>
+							</li>
+							
 						</c:if>
 
 
