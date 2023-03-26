@@ -9,5 +9,7 @@ Propriedades -> Targeted Runtime*/
 erro deletar telefone, não está retornando para a tela
 Erro deletar, resolvido.
 
+teste
+
 Mensagem de comprar ainda em ação
 Resolvido Botão comprar
