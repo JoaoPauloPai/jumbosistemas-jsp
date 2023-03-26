@@ -46,6 +46,7 @@
 													<div class="card-block">
 														<h4 class="sub-title">Cadastro Pessoa</h4>
 
+														
 														<form class="form-material" enctype="multipart/form-data"
 															action="<%=request.getContextPath()%>/ServletProdutoController"
 															method="post" id="formUser">
@@ -190,6 +191,8 @@
 															<button type="button" class="btn btn-secondary"
 																data-toggle="modal" data-target="#exampleModalUsuario">Pesquisar</button>
 														</form>
+														
+														
 
 													</div>
 												</div>
